@@ -57,8 +57,10 @@ export const getOsdMonitor = (): Variable<number> => {
         (currentMonitor, defaultMonitor, followMonitor) => {
             if (followMonitor === true) {
                 return currentMonitor.id;
+        (focusedMonitor, defaultMonitor, followMonitor) => {
+            if (followMonitor === true) {
+                return focusedMonitor.id;
             }
-
             return defaultMonitor;
         },
     );
