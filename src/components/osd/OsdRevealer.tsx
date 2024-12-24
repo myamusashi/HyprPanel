@@ -33,7 +33,6 @@ export const OsdRevealer = (): JSX.Element => {
             <box className={'osd-container'} vertical={osdOrientation}>
                 {bind(orientation).as((currentOrientation) => {
                     if (currentOrientation === 'vertical') {
-<<<<<<< HEAD
                         return (
                             <box vertical>
                                 <OSDLabel />
@@ -41,9 +40,7 @@ export const OsdRevealer = (): JSX.Element => {
                                 <OSDIcon />
                             </box>
                         );
-=======
                         return <VerticalOsd currentOrientation={currentOrientation} />;
->>>>>>> 97e852cf94090d8d64a92d59068c1792628f809c
                     }
 
                     return <HorizontalOsd currentOrientation={currentOrientation} />;

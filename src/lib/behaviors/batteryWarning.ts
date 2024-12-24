@@ -5,11 +5,7 @@ import { Notify } from '../utils';
 export function warnOnLowBattery(): void {
     let sentLowNotification = false;
     let sentHalfLowNotification = false;
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 97e852cf94090d8d64a92d59068c1792628f809c
     batteryService.connect('notify::charging', () => {
         // Reset it when the battery is put to charge
         if (batteryService.charging) {
@@ -17,11 +13,7 @@ export function warnOnLowBattery(): void {
             sentHalfLowNotification = false;
         }
     });
-<<<<<<< HEAD
     
-=======
-
->>>>>>> 97e852cf94090d8d64a92d59068c1792628f809c
     batteryService.connect('notify::percentage', () => {
         const { lowBatteryThreshold, lowBatteryNotification, lowBatteryNotificationText, lowBatteryNotificationTitle } =
             options.menus.power;

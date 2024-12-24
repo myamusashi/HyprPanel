@@ -7,13 +7,8 @@ import Separator from 'src/components/shared/Separator.js';
 export const WeatherWidget = ({ isEnabled }: WeatherWidgetProps): JSX.Element => {
     if (!isEnabled) {
         return <box />;
-<<<<<<< HEAD
     }    
-    
-=======
-    }
 
->>>>>>> 97e852cf94090d8d64a92d59068c1792628f809c
     return (
         <box className={'calendar-menu-item-container weather'}>
             <box className={'weather-container-box'}>
