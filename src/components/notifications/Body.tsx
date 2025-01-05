@@ -10,7 +10,7 @@ export const Body = ({ notification }: BodyProps): JSX.Element => {
                 halign={Gtk.Align.START}
                 label={notification.body}
                 maxWidthChars={!notifHasImg(notification) ? 35 : 28}
-                lines={2}
+                lines={4}
                 truncate
                 wrap
                 justify={Gtk.Justification.LEFT}

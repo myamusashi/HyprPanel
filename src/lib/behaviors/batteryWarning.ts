@@ -13,7 +13,7 @@ export function warnOnLowBattery(): void {
             sentHalfLowNotification = false;
         }
     });
-
+    
     batteryService.connect('notify::percentage', () => {
         const { lowBatteryThreshold, lowBatteryNotification, lowBatteryNotificationText, lowBatteryNotificationTitle } =
             options.menus.power;
