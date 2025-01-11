@@ -9,6 +9,7 @@ export const WeatherWidget = ({ isEnabled }: WeatherWidgetProps): JSX.Element =>
         return <box />;
     }
 
+    }    
     return (
         <box className={'calendar-menu-item-container weather'}>
             <box className={'weather-container-box'}>
