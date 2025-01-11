@@ -1,0 +1,114 @@
+* {
+  font-family: Ubuntu Nerd Font;
+}
+
+/* ===================================== */
+/*               Rose Pine               */
+/* ===================================== */
+.greeter-window {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.greeter-window .auth {
+  background: #191724;
+  border-radius: 0.4em;
+  min-width: 34em;
+  min-height: 42em;
+}
+
+.greeter-window .profileNameContainer {
+  margin-top: 3em;
+}
+.greeter-window .profileNameContainer .profileName {
+  color: #eb6f92;
+  font-size: 2em;
+}
+.greeter-window .profileNameContainer .navigator {
+  all: unset;
+  font-size: 1.5em;
+  color: #eb6f92;
+  min-width: 1.5em;
+  border-radius: 0.2em;
+  font-family: "JetBrainsMono Nerd Font Propo", monospace;
+  margin-top: 0.15em;
+}
+.greeter-window .profileNameContainer .navigator:hover {
+  color: #31748f;
+}
+.greeter-window .profileNameContainer .navigator.left {
+  margin-right: 0.5em;
+}
+.greeter-window .profileNameContainer .navigator.right {
+  margin-left: 0.5em;
+}
+
+.greeter-window .profilePicture {
+  border-radius: 0.4em;
+  min-height: 13em;
+  min-width: 13em;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 0.15em 0 0 #524f67;
+}
+
+.greeter-window .login-password {
+  margin-top: 1.5em;
+  min-width: 10em;
+  border-radius: 0em;
+  background: #21202e;
+  outline: none;
+  color: #eb6f92;
+  font-size: 1.7em;
+  box-shadow: 0 0.1em 0 0 #31748f;
+}
+
+.sessionContainer {
+  margin-top: 3em;
+}
+.sessionContainer .sessionsButton {
+  background: #21202e;
+  border-radius: 0.2em;
+  font-size: 1.1em;
+}
+.sessionContainer .sessionsButton:active, .sessionContainer .sessionsButton:focus {
+  box-shadow: 0 0 0 0.1em #31748f;
+}
+.sessionContainer .loginButton {
+  background: #21202e;
+  margin-left: 0.4em;
+  border-radius: 0.2em;
+  font-size: 1.5em;
+}
+.sessionContainer .loginButton:active, .sessionContainer .loginButton:focus {
+  box-shadow: 0 0 0 0.1em #31748f;
+}
+
+.sessionMenu {
+  border-radius: 0.3em;
+  background: #21202e;
+}
+
+.sessionMenuItem {
+  font-size: 1.2em;
+  font-family: Ubuntu Nerd Font;
+  transition: background-color 300ms cubic-bezier(0, 0, 0.2, 1);
+  padding: 0.3em;
+  border-radius: 0.1em;
+  color: #eb6f92;
+}
+.sessionMenuItem:hover, .sessionMenuItem:active {
+  background-color: rgba(49, 116, 143, 0.4);
+}
+
+.sessionClock {
+  font-size: 3em;
+}
+
+.loginControls {
+  font-size: 3em;
+}
+
+/*# sourceMappingURL=main.css.map */
