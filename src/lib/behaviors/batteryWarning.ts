@@ -5,7 +5,11 @@ import { Notify } from '../utils';
 export function warnOnLowBattery(): void {
     let sentLowNotification = false;
     let sentHalfLowNotification = false;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 28dee3d (Properly implement low battery notifications)
     batteryService.connect('notify::charging', () => {
         // Reset it when the battery is put to charge
         if (batteryService.charging) {
@@ -13,7 +17,11 @@ export function warnOnLowBattery(): void {
             sentHalfLowNotification = false;
         }
     });
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 28dee3d (Properly implement low battery notifications)
     batteryService.connect('notify::percentage', () => {
         const { lowBatteryThreshold, lowBatteryNotification, lowBatteryNotificationText, lowBatteryNotificationTitle } =
             options.menus.power;
@@ -29,19 +37,32 @@ export function warnOnLowBattery(): void {
         // To avoid double notifications, we check each of the thresholds and set the correct `sentNotification`, but then
         // combine them into one notification only
         let sendNotification = false;
+<<<<<<< HEAD
         if (!sentLowNotification && batteryPercentage <= lowThreshold) {
             sentLowNotification = true;
             sendNotification = true;
         }
         if (!sentHalfLowNotification && batteryPercentage <= lowThreshold / 2) {
+=======
+        if (!sentLowNotification && batteryPercentage < lowThreshold) {
+            sentLowNotification = true;
+            sendNotification = true;
+        }
+        if (!sentHalfLowNotification && batteryPercentage < lowThreshold / 2) {
+>>>>>>> 28dee3d (Properly implement low battery notifications)
             sentHalfLowNotification = true;
             sendNotification = true;
         }
 
         if (sendNotification) {
             Notify({
+<<<<<<< HEAD
                 summary: lowBatteryNotificationTitle.get().replaceAll('$POWER_LEVEL', batteryPercentage.toString()),
                 body: lowBatteryNotificationText.get().replaceAll('$POWER_LEVEL', batteryPercentage.toString()),
+=======
+                summary: lowBatteryNotificationTitle.get().replace('$POWER_LEVEL', batteryPercentage.toString()),
+                body: lowBatteryNotificationText.get().replace('$POWER_LEVEL', batteryPercentage.toString()),
+>>>>>>> 28dee3d (Properly implement low battery notifications)
                 iconName: icons.ui.warning,
                 urgency: 'critical',
             });
