@@ -49,6 +49,7 @@ export type BarModule =
     | 'hypridle'
     | 'hyprsunset'
     | 'cava';
+      'warp';
 
 export type BarLayout = {
     left: BarModule[];
