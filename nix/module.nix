@@ -351,7 +351,7 @@ in
       bar.workspaces.showWsIcons = mkBoolOption false;
       bar.workspaces.show_icons = mkBoolOption false;
       bar.workspaces.show_numbered = mkBoolOption false;
-      bar.workspaces.spacing = mkIntOption 1;
+      bar.workspaces.spacing = mkFloatOption 1.0;
       bar.workspaces.workspaceMask = mkBoolOption false;
       bar.workspaces.workspaces = mkIntOption 5;
       dummy = mkBoolOption true;
@@ -500,6 +500,7 @@ in
       theme.bar.buttons.workspaces.fontSize = mkStrOption "1.2em";
       theme.bar.buttons.workspaces.numbered_active_highlight_border = mkStrOption "0.2em";
       theme.bar.buttons.workspaces.numbered_active_highlight_padding = mkStrOption "0.2em";
+      theme.bar.buttons.workspaces.numbered_inactive_padding = mkStrOption "0.2em";
       theme.bar.buttons.workspaces.pill.active_width = mkStrOption "12em";
       theme.bar.buttons.workspaces.pill.height = mkStrOption "4em";
       theme.bar.buttons.workspaces.pill.radius = mkStrOption "1.9rem * 0.6";
