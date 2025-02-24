@@ -3,17 +3,17 @@ import { opt, mkOptions } from './lib/option';
 import { NetstatLabelType, RateUnit, ResourceLabelType } from './lib/types/bar';
 import { KbLabelType } from './lib/types/customModules/kbLayout';
 import {
-    ActiveWsIndicator,
-    AutoHide,
-    BarButtonStyles,
-    BarLayouts,
-    BarLocation,
-    BorderLocation,
-    NotificationAnchor,
-    OSDAnchor,
-    OSDOrientation,
-    ScalingPriority,
-    WindowLayer,
+	ActiveWsIndicator,
+	AutoHide,
+	BarButtonStyles,
+	BarLayouts,
+	BarLocation,
+	BorderLocation,
+	NotificationAnchor,
+	OSDAnchor,
+	OSDOrientation,
+	ScalingPriority,
+	WindowLayer,
 } from './lib/types/options';
 import { MatugenScheme, MatugenTheme, MatugenVariations } from './lib/types/options';
 import { SystrayIconMap } from './lib/types/systray';
@@ -23,71 +23,71 @@ import { ApplicationIcons, WorkspaceIcons, WorkspaceIconsColored } from './lib/t
 
 // WARN: CHANGING THESE VALUES WILL PREVENT MATUGEN COLOR GENERATION FOR THE CHANGED VALUE
 export const colors = {
-    rosewater: '#f5e0dc',
-    flamingo: '#f2cdcd',
-    pink: '#f5c2e7',
-    mauve: '#cba6f7',
-    red: '#f38ba8',
-    maroon: '#eba0ac',
-    peach: '#fab387',
-    yellow: '#f9e2af',
-    green: '#a6e3a1',
-    teal: '#94e2d5',
-    sky: '#89dceb',
-    sapphire: '#74c7ec',
-    blue: '#89b4fa',
-    lavender: '#b4befe',
-    text: '#cdd6f4',
-    subtext1: '#bac2de',
-    subtext2: '#a6adc8',
-    overlay2: '#9399b2',
-    overlay1: '#7f849c',
-    overlay0: '#6c7086',
-    surface2: '#585b70',
-    surface1: '#45475a',
-    surface0: '#313244',
-    base2: '#242438',
-    base: '#1e1e2e',
-    mantle: '#181825',
-    crust: '#11111b',
+	rosewater: '#f5e0dc',
+	flamingo: '#f2cdcd',
+	pink: '#f5c2e7',
+	mauve: '#cba6f7',
+	red: '#f38ba8',
+	maroon: '#eba0ac',
+	peach: '#fab387',
+	yellow: '#f9e2af',
+	green: '#a6e3a1',
+	teal: '#94e2d5',
+	sky: '#89dceb',
+	sapphire: '#74c7ec',
+	blue: '#89b4fa',
+	lavender: '#b4befe',
+	text: '#cdd6f4',
+	subtext1: '#bac2de',
+	subtext2: '#a6adc8',
+	overlay2: '#9399b2',
+	overlay1: '#7f849c',
+	overlay0: '#6c7086',
+	surface2: '#585b70',
+	surface1: '#45475a',
+	surface0: '#313244',
+	base2: '#242438',
+	base: '#1e1e2e',
+	mantle: '#181825',
+	crust: '#11111b',
 };
 
 // WARN: CHANGING THESE VALUES WILL PREVENT MATUGEN COLOR GENERATION FOR THE CHANGED VALUE
 const secondary_colors = {
-    text: '#cdd6f3',
-    pink: '#f5c2e6',
-    red: '#f38ba7',
-    peach: '#fab386',
-    mantle: '#181824',
-    surface1: '#454759',
-    surface0: '#313243',
-    overlay1: '#7f849b',
-    lavender: '#b4befd',
-    mauve: '#cba6f6',
-    green: '#a6e3a0',
-    sky: '#89dcea',
-    teal: '#94e2d4',
-    yellow: '#f9e2ad',
-    maroon: '#eba0ab',
-    crust: '#11111a',
-    surface2: '#585b69',
+	text: '#cdd6f3',
+	pink: '#f5c2e6',
+	red: '#f38ba7',
+	peach: '#fab386',
+	mantle: '#181824',
+	surface1: '#454759',
+	surface0: '#313243',
+	overlay1: '#7f849b',
+	lavender: '#b4befd',
+	mauve: '#cba6f6',
+	green: '#a6e3a0',
+	sky: '#89dcea',
+	teal: '#94e2d4',
+	yellow: '#f9e2ad',
+	maroon: '#eba0ab',
+	crust: '#11111a',
+	surface2: '#585b69',
 };
 
 const tertiary_colors = {
-    pink: '#f5c2e8',
-    red: '#f38ba9',
-    mantle: '#181826',
-    surface0: '#313245',
-    overlay1: '#7f849d',
-    lavender: '#b4beff',
-    mauve: '#cba6f8',
-    green: '#a6e3a2',
-    sky: '#89dcec',
-    teal: '#94e2d6',
-    yellow: '#f9e2ae',
-    maroon: '#eba0ad',
-    crust: '#11111c',
-    surface2: '#585b71',
+	pink: '#f5c2e8',
+	red: '#f38ba9',
+	mantle: '#181826',
+	surface0: '#313245',
+	overlay1: '#7f849d',
+	lavender: '#b4beff',
+	mauve: '#cba6f8',
+	green: '#a6e3a2',
+	sky: '#89dcec',
+	teal: '#94e2d6',
+	yellow: '#f9e2ae',
+	maroon: '#eba0ad',
+	crust: '#11111c',
+	surface2: '#585b71',
 };
 
 const options = mkOptions(CONFIG, {
@@ -1217,167 +1217,167 @@ const options = mkOptions(CONFIG, {
         },
     },
 
-    menus: {
-        transition: opt<Transition>('crossfade'),
-        transitionTime: opt(200),
-        media: {
-            hideAuthor: opt(false),
-            hideAlbum: opt(false),
-            displayTime: opt(false),
-            displayTimeTooltip: opt(false),
-            noMediaText: opt('No Media Currently Playing'),
-        },
-        volume: {
-            raiseMaximumVolume: opt(false),
-        },
-        power: {
-            lowBatteryNotification: opt(false),
-            lowBatteryThreshold: opt(20),
-            lowBatteryNotificationTitle: opt('Warning: Low battery'),
-            lowBatteryNotificationText: opt(
-                'Your battery is running low ($POWER_LEVEL %).\n\nPlease plug in your charger.',
-            ),
-            showLabel: opt(true),
-            confirmation: opt(true),
-            sleep: opt('systemctl suspend'),
-            reboot: opt('systemctl reboot'),
-            logout: opt('hyprctl dispatch exit'),
-            shutdown: opt('systemctl poweroff'),
-        },
-        dashboard: {
-            powermenu: {
-                confirmation: opt(true),
-                sleep: opt('systemctl suspend'),
-                reboot: opt('systemctl reboot'),
-                logout: opt('hyprctl dispatch exit'),
-                shutdown: opt('systemctl poweroff'),
-                avatar: {
-                    image: opt('~/.face.icon'),
-                    name: opt<'system' | string>('system'),
-                },
-            },
-            stats: {
-                enabled: opt(true),
-                interval: opt(2000),
-                enable_gpu: opt(false),
-            },
-            controls: {
-                enabled: opt(true),
-            },
-            shortcuts: {
-                enabled: opt(true),
-                left: {
-                    shortcut1: {
-                        icon: opt('󰇩'),
-                        tooltip: opt('Microsoft Edge'),
-                        command: opt('microsoft-edge-stable'),
-                    },
-                    shortcut2: {
-                        icon: opt(''),
-                        tooltip: opt('Spotify'),
-                        command: opt('spotify-launcher'),
-                    },
-                    shortcut3: {
-                        icon: opt(''),
-                        tooltip: opt('Discord'),
-                        command: opt('discord'),
-                    },
-                    shortcut4: {
-                        icon: opt(''),
-                        tooltip: opt('Search Apps'),
-                        command: opt('rofi -show drun'),
-                    },
-                },
-                right: {
-                    shortcut1: {
-                        icon: opt(''),
-                        tooltip: opt('Color Picker'),
-                        command: opt('sleep 0.5 && hyprpicker -a'),
-                    },
-                    shortcut3: {
-                        icon: opt('󰄀'),
-                        tooltip: opt('Screenshot'),
-                        command: opt(`bash -c "${SRC_DIR}/scripts/snapshot.sh"`),
-                    },
-                },
-            },
-            directories: {
-                enabled: opt(true),
-                left: {
-                    directory1: {
-                        label: opt('󰉍 Downloads'),
-                        command: opt('bash -c "xdg-open $HOME/Downloads/"'),
-                    },
-                    directory2: {
-                        label: opt('󰉏 Videos'),
-                        command: opt('bash -c "xdg-open $HOME/Videos/"'),
-                    },
-                    directory3: {
-                        label: opt('󰚝 Projects'),
-                        command: opt('bash -c "xdg-open $HOME/Projects/"'),
-                    },
-                },
-                right: {
-                    directory1: {
-                        label: opt('󱧶 Documents'),
-                        command: opt('bash -c "xdg-open $HOME/Documents/"'),
-                    },
-                    directory2: {
-                        label: opt('󰉏 Pictures'),
-                        command: opt('bash -c "xdg-open $HOME/Pictures/"'),
-                    },
-                    directory3: {
-                        label: opt('󱂵 Home'),
-                        command: opt('bash -c "xdg-open $HOME/"'),
-                    },
-                },
-            },
-        },
-        clock: {
-            time: {
-                military: opt(false),
-                hideSeconds: opt(false),
-            },
-            weather: {
-                enabled: opt(true),
-                interval: opt(60000),
-                unit: opt<UnitType>('imperial'),
-                location: opt('Los Angeles'),
-                key: opt<string>(''),
-            },
-        },
-    },
+	menus: {
+		transition: opt<Transition>('crossfade'),
+		transitionTime: opt(200),
+		media: {
+			hideAuthor: opt(false),
+			hideAlbum: opt(false),
+			displayTime: opt(false),
+			displayTimeTooltip: opt(false),
+			noMediaText: opt('No Media Currently Playing'),
+		},
+		volume: {
+			raiseMaximumVolume: opt(false),
+		},
+		power: {
+			lowBatteryNotification: opt(false),
+			lowBatteryThreshold: opt(20),
+			lowBatteryNotificationTitle: opt('Warning: Low battery'),
+			lowBatteryNotificationText: opt(
+				'Your battery is running low ($POWER_LEVEL %).\n\nPlease plug in your charger.',
+			),
+			showLabel: opt(true),
+			confirmation: opt(true),
+			sleep: opt('systemctl suspend'),
+			reboot: opt('systemctl reboot'),
+			logout: opt('hyprctl dispatch exit'),
+			shutdown: opt('systemctl poweroff'),
+		},
+		dashboard: {
+			powermenu: {
+				confirmation: opt(true),
+				sleep: opt('systemctl suspend'),
+				reboot: opt('systemctl reboot'),
+				logout: opt('hyprctl dispatch exit'),
+				shutdown: opt('systemctl poweroff'),
+				avatar: {
+					image: opt('~/.face.icon'),
+					name: opt<'system' | string>('system'),
+				},
+			},
+			stats: {
+				enabled: opt(true),
+				interval: opt(2000),
+				enable_gpu: opt(false),
+			},
+			controls: {
+				enabled: opt(true),
+			},
+			shortcuts: {
+				enabled: opt(true),
+				left: {
+					shortcut1: {
+						icon: opt('󰇩'),
+						tooltip: opt('Microsoft Edge'),
+						command: opt('microsoft-edge-stable'),
+					},
+					shortcut2: {
+						icon: opt(''),
+						tooltip: opt('Spotify'),
+						command: opt('spotify-launcher'),
+					},
+					shortcut3: {
+						icon: opt(''),
+						tooltip: opt('Discord'),
+						command: opt('discord'),
+					},
+					shortcut4: {
+						icon: opt(''),
+						tooltip: opt('Search Apps'),
+						command: opt('rofi -show drun'),
+					},
+				},
+				right: {
+					shortcut1: {
+						icon: opt(''),
+						tooltip: opt('Color Picker'),
+						command: opt('sleep 0.5 && hyprpicker -a'),
+					},
+					shortcut3: {
+						icon: opt('󰄀'),
+						tooltip: opt('Screenshot'),
+						command: opt(`bash -c "${SRC_DIR}/scripts/snapshot.sh"`),
+					},
+				},
+			},
+			directories: {
+				enabled: opt(true),
+				left: {
+					directory1: {
+						label: opt('󰉍 Downloads'),
+						command: opt('bash -c "xdg-open $HOME/Downloads/"'),
+					},
+					directory2: {
+						label: opt('󰉏 Videos'),
+						command: opt('bash -c "xdg-open $HOME/Videos/"'),
+					},
+					directory3: {
+						label: opt('󰚝 Projects'),
+						command: opt('bash -c "xdg-open $HOME/Projects/"'),
+					},
+				},
+				right: {
+					directory1: {
+						label: opt('󱧶 Documents'),
+						command: opt('bash -c "xdg-open $HOME/Documents/"'),
+					},
+					directory2: {
+						label: opt('󰉏 Pictures'),
+						command: opt('bash -c "xdg-open $HOME/Pictures/"'),
+					},
+					directory3: {
+						label: opt('󱂵 Home'),
+						command: opt('bash -c "xdg-open $HOME/"'),
+					},
+				},
+			},
+		},
+		clock: {
+			time: {
+				military: opt(false),
+				hideSeconds: opt(false),
+			},
+			weather: {
+				enabled: opt(true),
+				interval: opt(60000),
+				unit: opt<UnitType>('imperial'),
+				location: opt('Los Angeles'),
+				key: opt<string>(''),
+			},
+		},
+	},
 
-    scalingPriority: opt<ScalingPriority>('gdk'),
+	scalingPriority: opt<ScalingPriority>('gdk'),
 
-    terminal: opt('$TERM'),
-    tear: opt(false),
+	terminal: opt('$TERM'),
+	tear: opt(false),
 
-    wallpaper: {
-        enable: opt(true),
-        image: opt(''),
-        pywal: opt(false),
-    },
+	wallpaper: {
+		enable: opt(true),
+		image: opt(''),
+		pywal: opt(false),
+	},
 
-    notifications: {
-        position: opt<NotificationAnchor>('top right'),
-        ignore: opt<string[]>([]),
-        displayedTotal: opt(10),
-        monitor: opt(0),
-        active_monitor: opt(true),
-        showActionsOnHover: opt(false),
-        timeout: opt(7000),
-        autoDismiss: opt(false),
-        cache_actions: opt(true),
-        clearDelay: opt(100),
-    },
+	notifications: {
+		position: opt<NotificationAnchor>('top right'),
+		ignore: opt<string[]>([]),
+		displayedTotal: opt(10),
+		monitor: opt(0),
+		active_monitor: opt(true),
+		showActionsOnHover: opt(false),
+		timeout: opt(7000),
+		autoDismiss: opt(false),
+		cache_actions: opt(true),
+		clearDelay: opt(100),
+	},
 
-    hyprpanel: {
-        restartAgs: opt(true),
-        restartCommand: opt('hyprpanel -q; hyprpanel'),
-    },
+	hyprpanel: {
+		restartAgs: opt(true),
+		restartCommand: opt('hyprpanel -q; hyprpanel'),
+	},
 
-    dummy: opt(true),
+	dummy: opt(true),
 });
 
 globalThis['options'] = options;

@@ -19,7 +19,7 @@ let count = 0;
  */
 let isStartingUp = true;
 timeout(3000, () => {
-    isStartingUp = false;
+	isStartingUp = false;
 });
 
 /**
@@ -31,24 +31,24 @@ timeout(3000, () => {
  * @param property The property to check, either 'revealChild' or 'visible'.
  */
 export const handleReveal = (self: Widget.Revealer): void => {
-    if (isStartingUp) {
-        return;
-    }
+	if (isStartingUp) {
+		return;
+	}
 
-    if (!enable.get()) {
-        return;
-    }
+	if (!enable.get()) {
+		return;
+	}
 
-    self.reveal_child = true;
+	self.reveal_child = true;
 
-    count++;
-    timeout(duration.get(), () => {
-        count--;
+	count++;
+	timeout(duration.get(), () => {
+		count--;
 
-        if (count === 0) {
-            self.reveal_child = false;
-        }
-    });
+		if (count === 0) {
+			self.reveal_child = false;
+		}
+	});
 };
 
 /**
@@ -59,18 +59,21 @@ export const handleReveal = (self: Widget.Revealer): void => {
  * @returns A Variable<number> representing the monitor index for the OSD.
  */
 export const getOsdMonitor = (): Variable<number> => {
-    return Variable.derive(
-        [bind(hyprlandService, 'focusedMonitor'), bind(monitor), bind(active_monitor)],
-        (currentMonitor, defaultMonitor, followMonitor) => {
-            if (followMonitor === true) {
-                return currentMonitor.id;
-            }
-
-            return defaultMonitor;
-        },
-    );
+	return Variable.derive(
+		[bind(hyprlandService, 'focusedMonitor'), bind(monitor), bind(active_monitor)],
+		(currentMonitor, defaultMonitor, followMonitor) => {
+			if (followMonitor === true) {
+				return currentMonitor.id;
+			}
+		},
+		(focusedMonitor, defaultMonitor, followMonitor) => {
+			if (followMonitor === true) {
+				return focusedMonitor.id;
+			}
+			return defaultMonitor;
+		},
+	);
 };
-
 /**
  * Sets up the revealer for OSD.
  *
@@ -79,26 +82,26 @@ export const getOsdMonitor = (): Variable<number> => {
  * @param self The Widget.Revealer instance to set up.
  */
 export const revealerSetup = (self: Widget.Revealer): void => {
-    self.hook(enable, () => {
-        handleReveal(self);
-    });
+	self.hook(enable, () => {
+		handleReveal(self);
+	});
 
-    self.hook(brightnessService, 'notify::screen', () => {
-        handleReveal(self);
-    });
+	self.hook(brightnessService, 'notify::screen', () => {
+		handleReveal(self);
+	});
 
-    self.hook(brightnessService, 'notify::kbd', () => {
-        handleReveal(self);
-    });
+	self.hook(brightnessService, 'notify::kbd', () => {
+		handleReveal(self);
+	});
 
-    Variable.derive(
-        [bind(audioService.defaultMicrophone, 'volume'), bind(audioService.defaultMicrophone, 'mute')],
-        () => {
-            handleReveal(self);
-        },
-    );
+	Variable.derive(
+		[bind(audioService.defaultMicrophone, 'volume'), bind(audioService.defaultMicrophone, 'mute')],
+		() => {
+			handleReveal(self);
+		},
+	);
 
-    Variable.derive([bind(audioService.defaultSpeaker, 'volume'), bind(audioService.defaultSpeaker, 'mute')], () => {
-        handleReveal(self);
-    });
+	Variable.derive([bind(audioService.defaultSpeaker, 'volume'), bind(audioService.defaultSpeaker, 'mute')], () => {
+		handleReveal(self);
+	});
 };
